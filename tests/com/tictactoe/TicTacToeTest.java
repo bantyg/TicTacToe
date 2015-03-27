@@ -13,6 +13,31 @@ public class TicTacToeTest {
         assertEquals(msg, t.getWelcomeMessage());
     }
 
+    @Test
+    public void firstPlayerShouldWinTheGame(){
+        User user = new User();
+        TicTacToe t = new TicTacToe();
+        user.storeUserInput(1);
+        user.storeUserInput(2);
+        user.storeUserInput(5);
+        user.storeUserInput(6);
+        user.storeUserInput(9);
+        assertEquals(t.hasWin(user.xPosition, user.oPosition),true);
+    }
 
-
+    @Test
+    public void gameShouldBeDraw(){
+        User user = new User();
+        TicTacToe t = new TicTacToe();
+        user.storeUserInput(1);
+        user.storeUserInput(2);
+        user.storeUserInput(3);
+        user.storeUserInput(5);
+        user.storeUserInput(4);
+        user.storeUserInput(7);
+        user.storeUserInput(8);
+        user.storeUserInput(9);
+        user.storeUserInput(6);
+        assertEquals(t.hasWin(user.xPosition, user.oPosition),false);
+    }
 }

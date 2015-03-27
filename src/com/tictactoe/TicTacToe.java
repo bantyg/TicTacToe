@@ -6,7 +6,6 @@ import java.util.List;
 
 public class TicTacToe {
     String winner = "";
-    Board b = new Board();
     private static List<Integer[]> winningPositions = new ArrayList<Integer[]>();
 
    static{
@@ -20,6 +19,20 @@ public class TicTacToe {
         winningPositions.add(new Integer[]{1, 5, 9});
         winningPositions.add(new Integer[]{3, 5, 7});
     }
+
+    public boolean finishingGame(User user, int i) {
+        if(hasWin(user.xPosition, user.oPosition)) {
+            System.out.println("Winner is " + winner);
+            return true;
+        }
+        if(i ==8){
+            System.out.println("the game is draw");
+            return false;
+        }
+        return false;
+    }
+
+
     public String getWelcomeMessage() {
         return "Welcome to TicTacToe \n position Format \n"+
                 "1 2 3\n4 5 6\n7 8 9";
@@ -36,9 +49,7 @@ public class TicTacToe {
                 winner = "player2";
                 return true;
             }
-
         }
         return false;
     }
-
 }

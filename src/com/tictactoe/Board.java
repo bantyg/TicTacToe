@@ -1,12 +1,7 @@
 package com.tictactoe;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by poojag on 3/26/2015.
- */
 public class Board {
    private char[] positionsInChar = showBoard().toCharArray();
 
@@ -23,5 +18,15 @@ public class Board {
                 positionsInChar[(index2 - 1) * 2] = 'O';
         }
         return  String.valueOf(positionsInChar);
+    }
+
+    public boolean isValidPosition(int user1input) {
+        if(user1input <= 9 && user1input > 0){
+            return true;
+        }
+        else{
+            System.out.println("Invalid position...\n Enter valid:-");
+            return false;
+        }
     }
 }

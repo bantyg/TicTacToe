@@ -14,16 +14,20 @@ public class Main {
         System.out.println(b.showBoard());
         for (int i = 0; i < 9; i++) {
             user1input = sc.nextInt();
-            user.storeUserInput(user1input);
-            System.out.println(t.b.showPositioning(user.xPosition, user.oPosition));
-            if(t.hasWin(user.xPosition , user.oPosition)) {
-                System.out.println("Winner is " + t.winner);
-                break;
+            if(b.isValidPosition(user1input) && !user.isAlreadyGiven(user1input)){
+                user.storeUserInput(user1input);
+                System.out.println(b.showPositioning(user.xPosition, user.oPosition));
+                if(t.hasWin(user.xPosition , user.oPosition)) {
+                    System.out.println("Winner is " + t.winner);
+                    break;
+                }
+                if(i ==8){
+                    System.out.println("the game is draw");
+                }
             }
-            if(i ==8){
-                System.out.println("the game is draw");
-            }
+            else
+                i--;
         }
-
     }
+
 }
