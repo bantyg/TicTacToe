@@ -3,6 +3,7 @@ package com.tictactoe;
 import java.util.List;
 
 public class Board {
+
    private char[] positionsInChar = showBoard().toCharArray();
 
     public String showBoard(){
@@ -15,7 +16,7 @@ public class Board {
         positionsInChar[(index1 - 1) * 2] = 'X';
         if(l2.size()>0) {
             index2 = l2.get(l2.size() - 1);
-                positionsInChar[(index2 - 1) * 2] = 'O';
+            positionsInChar[(index2 - 1) * 2] = 'O';
         }
         return  String.valueOf(positionsInChar);
     }

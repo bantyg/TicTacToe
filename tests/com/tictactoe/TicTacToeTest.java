@@ -22,7 +22,7 @@ public class TicTacToeTest {
         user.storeUserInput(5);
         user.storeUserInput(6);
         user.storeUserInput(9);
-        assertEquals(t.hasWin(user.xPosition, user.oPosition),true);
+        assertEquals(t.hasWin(user),true);
     }
 
     @Test
@@ -38,6 +38,6 @@ public class TicTacToeTest {
         user.storeUserInput(8);
         user.storeUserInput(9);
         user.storeUserInput(6);
-        assertEquals(t.hasWin(user.xPosition, user.oPosition),false);
+        assertEquals(t.hasWin(user),false);
     }
 }
